@@ -1,9 +1,9 @@
 import { sequelize } from '../config/database.js';
-import { User } from '.User.js';
-import { Profile } from '.profile.js';
-import { Article } from '.Article.js';
-import { Tag } from '.Tag.js';
-import { ArticleTag } from '.ArticleTag.js';
+import { User } from './User.js';
+import { Profile } from './Profile.js';
+import { Article } from './Article.js';
+import { Tag } from './Tag.js';
+import { ArticleTag } from './ArticleTag.js';
 
 // Relación 1:1 
 User.hasOne(Profile, {

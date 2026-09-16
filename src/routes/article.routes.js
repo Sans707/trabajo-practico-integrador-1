@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { createArticle, getArticles, deleteArticle } from '.article.controller.js';
-import { articleValidation, idParamValidation } from '..article.validator.js';
-import { validateResult } from '.validateResult.js';
-import { authMiddleware } from '..authMiddleware.js';
-import { ownerMiddleware } from '..ownerMiddleware.js';
+import { createArticle, getArticles, deleteArticle } from '../controllers/article.controller.js';
+import { articleValidation, idParamValidation } from '../middlewares/validators/article.validator.js';
+import { validateResult } from '../middlewares/validateResult.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
+import { ownerMiddleware } from '../middlewares/ownerMiddleware.js';
 
 const router = Router();
 

@@ -1,6 +1,6 @@
-import { User, Profile } from '.index.js';
-import { hashPassword, comparePassword } from '.bcrypt.helper.js';
-import { generateToken } from '.jwt.helper.js';
+import { User, Profile } from '../models/index.js';
+import { hashPassword, comparePassword } from '../helpers/bcrypt.helper.js';
+import { generateToken } from '../helpers/jwt.helper.js';
 
 export const register = async (req, res) => {
   try {

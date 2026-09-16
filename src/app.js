@@ -2,12 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
-import { connectDB, sequelize } from '.database.js';
-import '.index.js';
+import { connectDB, sequelize } from './config/database.js';
+import './models/index.js';
 
-import authRoutes from '.auth.routes.js';
-import articleRoutes from '.article.routes.js';
-
+import authRoutes from './routes/auth.routes.js';
+import articleRoutes from './routes/article.routes.js';
 import tagRoutes from './routes/tag.routes.js';
 import articleTagRoutes from './routes/articleTag.routes.js';
 

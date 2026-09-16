@@ -1,4 +1,4 @@
-import { Tag, Article } from '.index.js';
+import { Tag, Article } from '../models/index.js';
 
 export const createTag = async (req, res) => {
   try {
