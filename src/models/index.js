@@ -5,7 +5,7 @@ import { Article } from '.Article.js';
 import { Tag } from '.Tag.js';
 import { ArticleTag } from '.ArticleTag.js';
 
-// Relación 1:1 (User <-> Profile)
+// Relación 1:1 
 User.hasOne(Profile, {
   foreignKey: 'user_id',
   as: 'profile',
@@ -16,7 +16,7 @@ Profile.belongsTo(User, {
   as: 'user'
 });
 
-// Relación 1:N (User -> Article)
+// Relación 1:N 
 User.hasMany(Article, {
   foreignKey: 'user_id',
   as: 'articles'
@@ -26,7 +26,7 @@ Article.belongsTo(User, {
   as: 'author'
 });
 
-// Relación N:M (Article <-> Tag mediante ArticleTag) con Eliminación en Cascada
+// Relación N:M 
 Article.belongsToMany(Tag, {
   through: ArticleTag,
   foreignKey: 'article_id',
