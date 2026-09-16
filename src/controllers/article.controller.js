@@ -37,7 +37,7 @@ export const deleteArticle = async (req, res) => {
     const article = await Article.findByPk(id);
     if (!article) return res.status(404).json({ message: 'Artículo no encontrado' });
 
-    await article.destroy(); // La eliminación en cascada de sus referencias en ArticleTag está configurada en Sequelize
+    await article.destroy();
     return res.status(200).json({ message: 'Artículo eliminado correctamente' });
   } catch (error) {
     return res.status(500).json({ message: 'Error al eliminar el artículo', error: error.message });

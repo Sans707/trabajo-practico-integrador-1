@@ -3,10 +3,13 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import { connectDB, sequelize } from '.database.js';
-import '.index.js'; // Importa los modelos para que Sequelize los reconozca
+import '.index.js';
 
 import authRoutes from '.auth.routes.js';
 import articleRoutes from '.article.routes.js';
+
+import tagRoutes from './routes/tag.routes.js';
+import articleTagRoutes from './routes/articleTag.routes.js';
 
 dotenv.config();
 
@@ -21,6 +24,10 @@ app.use(cookieParser());
 // Rutas
 app.use('/api/auth', authRoutes);
 app.use('/api/articles', articleRoutes);
+
+// Rutas para tags y article-tags
+app.use('/api/tags', tagRoutes);
+app.use('/api/articles-tags', articleTagRoutes);
 
 // Servidor y BD
 const startServer = async () => {
